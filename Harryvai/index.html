@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio with tailwind </title>
+    <!-- <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="portfolioStyle.css"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgb(0, 0, 33);
+    color: white;
+
+    font-size: 30px;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+    background: #070770;
+    font-family: 'Tangerine', serif;
+    position: fixed;
+    /* Fix the position of the header */
+    top: 0;
+    /* Stick to the top of the viewport */
+    left: 0;
+    /* Align to the left edge */
+    width: 100%;
+    /* Make the header span the entire width */
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover {
+    cursor: pointer;
+    color: rgb(138, 238, 38);
+    font-size: 35px;
+}
+
+.left:hover {
+    color: rgb(138, 238, 38);
+    font-size: 45px;
+    transition: .3s ease-in-out;
+}
+
+.left {
+    font-size: 2.5rem;
+}
+
+.firstSection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 70px 0;
+}
+
+.leftSection {
+    font: 2.5rem;
+    margin: 30px 0;
+}
+
+.firstSection>div {
+    width: 30%;
+
+}
+
+.rightSection img {
+    width: 80%;
+    margin: 55px 0;
+}
+
+.auto-type {
+    color: rgb(123, 14, 225);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.Auto-type {
+    color: rgb(123, 14, 225);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.secondSection {
+    max-width: 80vw;
+    margin: auto;
+}
+
+main hr {
+    border: 0;
+    background: #2020f3;
+    height: 1.2px;
+    margin: 40px 84px;
+}
+
+.social_media a {
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background: transparent;
+    border: .1rem solid #59b2f4;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    color: #59b2f4;
+    margin-left: 80px;
+    transition: .5s ease-in-out;
+    text-decoration: none;
+
+}
+
+.social_media a:hover {
+    background: #59b2f4;
+    color: #030709;
+    box-shadow: 0 0 1rem #59b2f4;
+}
+
+.btn {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background: transparent;
+    padding: 1rem 2.8rem;
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem;
+    font: size 1.6rem;
+    color: #59b2f4;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    transition: .7s ease-in-out;
+    margin: 30px 40px;
+}
+
+.btn:hover {
+    background: #59b2f4;
+    color: rgb(0, 0, 33);
+    box-shadow: 0 0 1rem #59b2f4;
+}
+
+.text-gray {
+    font-size: 25px;
+    color: gray;
+}
+
+.thirdSection {
+    max-width: 80vw;
+    margin: auto;
+    height: 80vh;
+
+}
+
+.thirdSection h1 {
+    font-size: 2rem;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/*  responsiveness  */
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    .right {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #070770;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 999;
+    }
+
+    .right ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .right ul li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .right ul li a {
+        display: block;
+        padding: 10px 0;
+        font-size: 1.5rem;
+    }
+
+    .menu-toggle.active+.right {
+        display: flex;
+    }
+
+    .firstSection {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .firstSection>div {
+        width: 100%;
+    }
+
+    .rightSection img {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .social_media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        margin: 10px 10px;
+    }
+
+    .btn {
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li a {
+        font-size: 1.2rem;
+    }
+
+    .firstSection {
+        font-size: 1rem;
+    }
+
+    .rightSection img {
+        width: 100%;
+    }
+
+    .social_media a {
+        margin: 10px 10px;
+    }
+}
+
+.thirdSection .box {
+    background: rgb(44, 2, 253);
+    width: 80vw;
+    height: 2px;
+    margin: 56px 0;
+    display: flex;
+}
+
+.thirdSection .vertical {
+    background-color: rgb(255, 255, 255);
+    height: 93px;
+    width: 1px;
+    margin: 0 120px;
+
+}
+
+.vertical-title {
+    position: relative;
+    top: 90px;
+    left: -80px;
+    margin-bottom: 5px;
+    width: 180px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.vertical-desc {
+    position: relative;
+    top: 86px;
+    left: -70px;
+    color: gray;
+    font-size: 9px;
+    width: 150px;
+}
+
+
+
+        </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <nav>
+            <div class="left">Mahadeb's Portfolio</div>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="right" id="nav-menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Project</a></li>
+                    <li><a href="#">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                HI,<span> I Am MAHADEB </span> <br>
+                <span class="auto-type" class="purple"></span>
+                <div> And i am a passionate</div>
+                <div> <span class="Auto-type"> </span></div>
+            </div>
+            <div class="rightSection">
+                <img src="C:\Users\Mahadeb Maity\OneDrive\My Portfolio\developer.png"
+                    alt="background images ">
+            </div>
+        </section>
+
+        <hr>
+        <section class="secondSection">
+            <div class="social_media">
+                <a href="acebook.com/profile.php?id=100073263476746&mibextid=ZbWKwL"><i
+                        class="fa-brands fa-facebook"></i></a>
+                <a href="#instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#linked in"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#twiter"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <div>
+                <a href="#" class="btn">Download cv</a>
+            </div>
+        </section>
+        <hr>
+        <section class="thirdSection">
+            <span class="text-gray"> What I have done so far</span>
+            <h1> My Learning Skill </h1>
+
+            <div class="box">
+                <div class="vertical">
+                    <!-- <img src="images/html-icon.png" alt=""> -->
+                    <div class="vertical-title">
+                        Learn HTML From YouTube (2023)
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam id fugiat. Error facilis
+                        nam minima architecto consequuntur, inventore mollitia
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <div class="vertical-title">
+                        Learn css from YouTube (2023)
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam id fugiat. Error facilis
+                        nam minima architecto consequuntur, inventore
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <div class="vertical-title">
+                        Learn javaScript From YouTube (2024)
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam id fugiat. Error facilis
+                        nam minima architecto consequuntur, inventore
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <div class="vertical-title">
+                        Learn tailwind From YouTube (2024)
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam id fugiat. Error facilis
+                        nam minima architecto consequuntur, inventore
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <div class="vertical-title">
+                        Learn java From YouTube (2023)
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam id fugiat. Error facilis
+                        nam minima architecto consequuntur, inventore
+                    </div>
+                </div>
+
+
+            </div>
+
+        </section>
+    </main>
+
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Auto type code  -->
+    <script>
+        var typed = new Typed('.Auto-type', {
+            strings: [" FullStack Web Developer", " Web Designer", " App Developer", "Game Developer", " Android Developer", " Robotic Engineer", " Video Editor", "Ethical hacker"],
+            typeSpeed: 50,
+            backSpeed: 50,
+            loop: true
+        });
+        var typed = new Typed('.auto-type', {
+
+            strings: [" Welcome To My Mahadeb's Portfolio ", " I Am From West Medinipur", " I Lives In Panskura", " I Am Doing My Graduation From Panshkura Banmali College", " I Am Completing My Madhyamik And Higher secondary Education From Dasagram S S Siksha Sadan"],
+            typeSpeed: 50,
+            backSpeed: 50,
+            loop: true
+        });
+
+        // Function to open the menu on small devices
+        function openMenuOnSmallDevices() {
+            if (window.innerWidth <= 768) { // Check if the device width is 768px or smaller
+                navMenu.classList.add('active'); // Automatically display the menu
+            } else {
+                navMenu.classList.remove('active'); // Hide the menu on larger devices
+            }
+        }
+
+        // Add a click event listener for the menu toggle button
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active'); // Toggle the menu visibility on click
+        });
+
+        // Call the function on page load
+        openMenuOnSmallDevices();
+
+        // Call the function on window resize to dynamically adjust
+        window.addEventListener('resize', openMenuOnSmallDevices);
+
+
+
+    </script>
+    <script src="portfoliojs.js"></script>
+</body>
+
+</html>
